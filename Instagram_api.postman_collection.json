@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "97208585-8db6-45f3-9b95-0ecd235854a0",
+		"name": "Instagram_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "shrutika.dumbre@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "shrutika",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "shrutika.dumbre@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "dumbre",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "8sw5UtnSNA6es0RJoxDnvdr6RbKGoir7pmTWoXviAqWIVwPTfv5n7Z4qImsb"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:8000/api/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "postCreate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "Vjbov77EC9OwrbMALkwwhhjiT4N93jw0AxRzkeB5c0o2iNMMoGFRh2OIefZo"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Content_text",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "Content_media[]",
+							"type": "file",
+							"src": "/C:/Users/Shrutika/Downloads/225668833.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/post/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Postlike",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "Vjbov77EC9OwrbMALkwwhhjiT4N93jw0AxRzkeB5c0o2iNMMoGFRh2OIefZo"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "post_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/feedback/like"
+			},
+			"response": []
+		},
+		{
+			"name": "PostDislike",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "Vjbov77EC9OwrbMALkwwhhjiT4N93jw0AxRzkeB5c0o2iNMMoGFRh2OIefZo"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "post_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/feedback/dislike"
+			},
+			"response": []
+		},
+		{
+			"name": "PostComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "Vjbov77EC9OwrbMALkwwhhjiT4N93jw0AxRzkeB5c0o2iNMMoGFRh2OIefZo"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "post_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "nice work",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/feedback/comment"
+			},
+			"response": []
+		},
+		{
+			"name": "userFollow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "Vjbov77EC9OwrbMALkwwhhjiT4N93jw0AxRzkeB5c0o2iNMMoGFRh2OIefZo"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to_user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/subscription/follow"
+			},
+			"response": []
+		},
+		{
+			"name": "userUnfollow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "8sw5UtnSNA6es0RJoxDnvdr6RbKGoir7pmTWoXviAqWIVwPTfv5n7Z4qImsb"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to_user_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/subscription/unfollow"
+			},
+			"response": []
+		}
+	]
+}
