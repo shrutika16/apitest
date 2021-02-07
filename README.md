@@ -1,41 +1,50 @@
-# apitest
+# API Test
 
-api test for Futurescape Technologies
+API test for Futurescape Technologies
 
 Technology used
 
--   Laravel
--   MySQL
+-   Laravel 5.8
+-   MySQL 5.6
 
 ## Installation
 
 Clone this repo and cd into folder
 
-copy .env-example to .env
-
-#### Install Package
-
-```bash
-    composer install
+```
+git clone https://github.com/shrutika16/apitest.git
 ```
 
-### Database Setup
+Copy env file
 
-1. Create new database and update connection details in .env
-2. Create Migration
-
-```bash
-    php artisan migrate
+```
+cp .env-example to .env
 ```
 
-#### API Endpoint List
+Run composer install for packages installation
 
-1. http://localhost:8000/api/register
-2. http://localhost:8000/api/login
-3. http://localhost:8000/api/logout
-4. http://localhost:8000/api/post/create
-5. http://localhost:8000/api/feedback/like
-6. http://localhost:8000/api/feedback/dislike
-7. http://localhost:8000/api/feedback/comment
-8. http://localhost:8000/api/subscription/follow
-9. http://localhost:8000/api/subscription/unfollow
+```
+composer install
+```
+
+## Database Migration
+
+Create new database and run migration command to create all required tables.
+
+```
+php artisan migrate
+```
+
+## API Endpoint List
+
+| Name                      | Method | Endpoint              |
+| ------------------------- | ------ | --------------------- |
+| /api/register             | POST   | Register User         |
+| /api/login                | POST   | User account login    |
+| /api/logout               | POST   | User account logout   |
+| /api/post/create          | POST   | Create post           |
+| /api/feedback/like        | POST   | Like post             |
+| /api/feedback/dislik      | POST   | Dislike post          |
+| /api/feedback/commen      | POST   | To do comment on post |
+| /api/subscription/follo   | POST   | Follow to users       |
+| /api/subscription/unfollo | POST   | UnFollow to user      |
