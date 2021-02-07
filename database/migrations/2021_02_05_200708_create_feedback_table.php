@@ -15,7 +15,6 @@ class CreateFeedbackTable extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('feedback',['1', '2']);
             $table->integer('user_id');
             $table->integer('post_id');
             $table->timestamps();

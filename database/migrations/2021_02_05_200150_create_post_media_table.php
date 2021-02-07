@@ -16,7 +16,7 @@ class CreatePostMediaTable extends Migration
         Schema::create('post_media', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('post_id');
-            $table->enum('media_type',['image', 'video']);
+            $table->enum('media_type',['image', 'video'])->default('image');
             $table->string('Media_content');
             $table->timestamps();
         });
